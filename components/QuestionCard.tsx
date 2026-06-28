@@ -20,7 +20,7 @@ export function QuestionCard({ question }: QuestionCardProps) {
         <p className="mb-2 text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
           Solve this
         </p>
-        <h2 className="text-5xl font-black tracking-tight sm:text-6xl md:text-7xl">
+        <h2 className="text-6xl font-black tracking-tight text-glow sm:text-7xl md:text-8xl lg:text-9xl">
           {question.text}
         </h2>
       </motion.div>

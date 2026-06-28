@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Target, TrendingUp, XCircle } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface ScoreBoardProps {
   score: number;
@@ -37,9 +38,10 @@ export function ScoreBoard({
           </div>
           <motion.p
             key={String(item.value)}
-            initial={{ scale: 1.08 }}
-            animate={{ scale: 1 }}
-            className="text-2xl font-bold tabular-nums"
+            initial={{ scale: 1.25, y: -5, opacity: 0 }}
+            animate={{ scale: 1, y: 0, opacity: 1 }}
+            transition={{ type: "spring", stiffness: 300, damping: 12 }}
+            className={cn("text-2xl font-bold tabular-nums", item.label === "Score" ? "text-primary text-glow text-3xl" : "")}
           >
             {item.value}
           </motion.p>

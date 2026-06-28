@@ -9,12 +9,12 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground shadow-lg shadow-primary/25 hover:brightness-110",
+          "bg-primary text-primary-foreground shadow-[0_0_20px_rgba(79,70,229,0.4)] hover:shadow-[0_0_30px_rgba(79,70,229,0.6)] hover:-translate-y-0.5 hover:scale-[1.02]",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80 hover:-translate-y-0.5",
         outline:
-          "border border-white/20 bg-white/5 backdrop-blur hover:bg-white/10",
-        ghost: "hover:bg-white/10",
+          "border border-white/20 bg-white/5 backdrop-blur hover:bg-white/10 hover:-translate-y-0.5",
+        ghost: "hover:bg-white/10 hover:-translate-y-0.5",
       },
       size: {
         default: "h-11 px-6 py-2",

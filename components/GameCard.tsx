@@ -41,7 +41,11 @@ export function GameCard({
   inputRef,
 }: GameCardProps) {
   return (
-    <div className="relative overflow-hidden rounded-3xl border border-white/15 bg-white/10 p-6 shadow-2xl backdrop-blur-xl sm:p-8">
+    <motion.div 
+      animate={flash === "wrong" ? { x: [-12, 12, -8, 8, -4, 4, 0] } : {}}
+      transition={{ duration: 0.4 }}
+      className="relative overflow-hidden rounded-[2.5rem] glass-panel p-8 sm:p-12 md:p-16"
+    >
       <AnimateFlash flash={flash} />
 
       <div className="mb-8">
@@ -80,7 +84,7 @@ export function GameCard({
         wrongAnswers={wrongAnswers}
         accuracy={accuracy}
       />
-    </div>
+    </motion.div>
   );
 }
 
@@ -89,12 +93,12 @@ function AnimateFlash({ flash }: { flash: AnswerFlash }) {
 
   return (
     <motion.div
-      initial={{ opacity: 0.45 }}
-      animate={{ opacity: 0 }}
-      transition={{ duration: 0.25 }}
+      initial={{ opacity: 0.8, scale: 0.98 }}
+      animate={{ opacity: 0, scale: 1 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       className={cn(
-        "pointer-events-none absolute inset-0 z-10",
-        flash === "correct" ? "bg-emerald-400/25" : "bg-red-500/25"
+        "pointer-events-none absolute inset-0 z-10 mix-blend-overlay",
+        flash === "correct" ? "bg-emerald-400" : "bg-red-500"
       )}
     />
   );
