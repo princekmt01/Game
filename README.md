@@ -1,5 +1,7 @@
 # Math Sprint
 
+**🎮 Live Demo: [https://game-prince010.vercel.app/](https://game-prince010.vercel.app/)**
+
 A fast-paced mental math web game built with Next.js, TypeScript, Tailwind CSS, Supabase, shadcn/ui, Framer Motion, and Lucide Icons.
 
 Race the clock — you have **60 seconds** to answer as many random math questions as possible. Each correct answer earns **10 points**. When time runs out, your score is automatically saved to the Supabase leaderboard.
